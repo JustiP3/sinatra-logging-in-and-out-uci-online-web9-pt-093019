@@ -21,8 +21,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-      @user = User.find(session[:user_id])
-      if @user
+    @user = User.find(session[:user_id])
+    if @user
       erb :account
     else
       erb :error
@@ -33,6 +33,4 @@ class ApplicationController < Sinatra::Base
     session.clear
     redirect '/'
   end
-
-
 end
